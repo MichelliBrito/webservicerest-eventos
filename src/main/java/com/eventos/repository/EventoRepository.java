@@ -6,4 +6,5 @@ import com.eventos.models.Evento;
 
 public interface EventoRepository extends JpaRepository<Evento, String>{
 
+	Evento findByCodigo(long codigo);
 }

@@ -6,9 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.hateoas.ResourceSupport;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
-public class Evento {
+public class Evento extends ResourceSupport{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
