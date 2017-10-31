@@ -99,6 +99,7 @@ hs_err_pid*
 .nfs*
 
 ### Maven ###
+mvnw.cmd
 target/
 pom.xml.tag
 pom.xml.releaseBackup
