@@ -1,3 +1,6 @@
 *.txt
 *.html
+.project
 .classpath
+mvnw.cmd
+
