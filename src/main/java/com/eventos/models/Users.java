@@ -19,12 +19,11 @@ public class Users implements UserDetails{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
 	private String nome;
+	
 	private String senha;
 	
-	@Id
-	private String email;
 	
 	@OneToMany
 	private List<Role> roles;
@@ -45,14 +44,6 @@ public class Users implements UserDetails{
 		this.senha = senha;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
 	public List<Role> getRoles() {
 		return roles;
 	}
