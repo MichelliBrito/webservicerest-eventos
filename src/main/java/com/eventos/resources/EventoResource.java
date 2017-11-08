@@ -67,4 +67,12 @@ public class EventoResource {
 		er.delete(evento);
 		return evento;
 	}
+	
+	@RequestMapping("/users")//teste
+	@ResponseBody
+	public String getUsers() {
+	return "{\"users\":[{\"name\":\"Lucas\", \"country\":\"Brazil\"}," +
+	                   "{\"name\":\"Jackie\",\"country\":\"China\"}]}";
+	    }
+
 }
