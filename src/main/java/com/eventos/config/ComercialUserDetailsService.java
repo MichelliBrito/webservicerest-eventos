@@ -1,13 +1,18 @@
 package com.eventos.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Repository;
 
 import com.eventos.models.Users;
 import com.eventos.repository.UsersRepository;
 
+
+@Repository
 public class ComercialUserDetailsService implements UserDetailsService{
 
 	@Autowired
@@ -22,5 +27,6 @@ public class ComercialUserDetailsService implements UserDetailsService{
 	    }
 		return user;
 	}
+	
 
 }

@@ -2,6 +2,7 @@ package com.eventos.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -31,7 +32,7 @@ public class Role implements GrantedAuthority{
 	@Override
 	public String getAuthority() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.nomeRole;
 	}
 
 }

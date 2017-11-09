@@ -1,15 +1,19 @@
 package com.eventos.models;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+
 
 @Entity
 public class Users implements UserDetails{
@@ -24,10 +28,10 @@ public class Users implements UserDetails{
 	
 	private String senha;
 	
-	
-	@OneToMany
-	private List<Role> roles;
+	@OneToMany(fetch=FetchType.EAGER)
+    private List<Role> roles = new ArrayList<Role>();
 
+	
 	public String getNome() {
 		return nome;
 	}
@@ -37,6 +41,7 @@ public class Users implements UserDetails{
 	}
 
 	public String getSenha() {
+		System.out.println(senha);
 		return senha;
 	}
 
@@ -55,7 +60,7 @@ public class Users implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return (Collection<? extends GrantedAuthority>) this.roles;
 	}
 
 	@Override
